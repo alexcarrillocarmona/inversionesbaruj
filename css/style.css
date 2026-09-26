@@ -1,0 +1,660 @@
+/* Variables de Colores Basadas en el Logotipo */
+:root {
+    --primary-color: #002a5c;   /* Azul Oscuro */
+    --secondary-color: #00a2ba; /* Cyan / Turquesa */
+    --dark-color: #1d1d1b;      /* Negro / Gris Oscuro */
+    --light-bg: #f4f7f9;        /* Fondo claro */
+    --white: #ffffff;
+    --gray-text: #555555;
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+/* Reset y Estilos Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+}
+
+body {
+    color: var(--dark-color);
+    line-height: 1.5;
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.section {
+    padding: 60px 0;
+}
+
+.bg-light {
+    background-color: var(--light-bg);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background: var(--secondary-color);
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    color: var(--gray-text);
+    font-size: 1rem;
+    margin-bottom: 25px;
+    margin-top: -10px;
+}
+
+/* Encabezado y Navegación */
+.header {
+    position: sticky;
+    top: 0;
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 75px;
+    width: auto;
+    object-fit: contain;
+    transition: var(--transition);
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    color: var(--secondary-color);
+}
+
+.btn-contact {
+    background-color: var(--primary-color);
+    color: var(--white) !important;
+    padding: 8px 18px;
+    border-radius: 20px;
+}
+
+.btn-contact:hover {
+    background-color: var(--secondary-color);
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, rgba(0,42,92,0.92), rgba(0,162,186,0.85)), url('../img/imagen1.jpg') center/cover;
+    color: var(--white);
+    padding: 90px 15px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+}
+
+.hero .tagline {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: #e0f7fa;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 0 auto 25px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--white);
+    color: var(--primary-color);
+}
+
+/* Sobre Nosotros & Galería */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: center;
+    margin-bottom: 45px;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    color: var(--gray-text);
+    font-size: 0.98rem;
+}
+
+.about-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.gallery-card {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.gallery-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: var(--transition);
+}
+
+.gallery-card img:hover {
+    transform: scale(1.02);
+}
+
+/* Por qué elegirnos */
+.why-choose-us h3 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.feature-card {
+    background-color: var(--light-bg);
+    padding: 22px 18px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 12px;
+}
+
+.feature-card h4 {
+    margin-bottom: 8px;
+    color: var(--primary-color);
+    font-size: 1.05rem;
+}
+
+.feature-card p {
+    font-size: 0.9rem;
+    color: var(--gray-text);
+}
+
+/* Misión y Visión */
+.mv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.mv-card {
+    background: var(--white);
+    padding: 30px 25px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    text-align: center;
+}
+
+.mv-icon {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+}
+
+.mv-card h3 {
+    margin-bottom: 12px;
+    color: var(--primary-color);
+}
+
+.mv-card p {
+    color: var(--gray-text);
+    font-size: 0.95rem;
+}
+
+/* Valores */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.value-card {
+    background: var(--white);
+    border: 1px solid #e2e8f0;
+    padding: 25px 18px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.value-card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transform: translateY(-4px);
+}
+
+.value-icon {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 12px;
+}
+
+.value-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.value-card p {
+    font-size: 0.9rem;
+    color: var(--gray-text);
+}
+
+/* Políticas de la Empresa */
+.policies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.policy-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transition);
+    border-top: 4px solid var(--secondary-color);
+    border-left: 1px solid #eef2f5;
+    border-right: 1px solid #eef2f5;
+    border-bottom: 1px solid #eef2f5;
+}
+
+.policy-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.policy-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 16px;
+}
+
+.policy-icon {
+    font-size: 2.2rem;
+    color: #e74c3c;
+    flex-shrink: 0;
+}
+
+.policy-header h3 {
+    font-size: 0.98rem;
+    color: var(--primary-color);
+    line-height: 1.35;
+    font-weight: 600;
+}
+
+.policy-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-policy {
+    flex: 1;
+    text-align: center;
+    padding: 9px 10px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.btn-view {
+    background-color: #f0f4f8;
+    color: var(--primary-color);
+    border: 1px solid #d0d7de;
+}
+
+.btn-view:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+}
+
+.btn-download {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.btn-download:hover {
+    background-color: #008499;
+}
+
+/* Contacto - Tarjetas */
+.contact-cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.contact-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 25px 20px;
+    width: 300px;
+    max-width: 100%;
+    text-decoration: none;
+    color: var(--dark-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #eef2f5;
+    border-top: 4px solid var(--primary-color);
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+}
+
+.gmail-card {
+    border-top-color: #ea4335;
+}
+
+.whatsapp-card {
+    border-top-color: #25d366;
+}
+
+.contact-card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+}
+
+.gmail-card .contact-card-icon { color: #ea4335; }
+.whatsapp-card .contact-card-icon { color: #25d366; }
+
+.contact-card h3 {
+    margin-bottom: 6px;
+    color: var(--primary-color);
+    font-size: 1.15rem;
+}
+
+.contact-card p {
+    color: var(--gray-text);
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.contact-btn-text {
+    font-weight: bold;
+    color: var(--white);
+    font-size: 0.88rem;
+    padding: 8px 18px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: var(--transition);
+}
+
+.gmail-card .contact-btn-text {
+    background-color: #ea4335;
+}
+
+.whatsapp-card .contact-btn-text {
+    background-color: #25d366;
+}
+
+.contact-card:hover .contact-btn-text {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 20px 15px;
+    font-size: 0.85rem;
+}
+
+/* ===================================================
+   ADAPTABILIDAD RESPONSIVA PARA CELULARES Y TABLETS
+   =================================================== */
+
+@media (max-width: 768px) {
+    .section {
+        padding: 40px 0;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+    }
+
+    /* Logo y Header en Celulares */
+    .logo-img {
+        height: 50px; /* Tamaño óptimo para teléfono */
+    }
+
+    .nav-container {
+        padding: 8px 12px;
+    }
+
+    .nav-toggle {
+        display: block;
+        font-size: 1.6rem;
+        padding: 4px 8px;
+    }
+
+    /* Menú flotante móvil */
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        display: none;
+        z-index: 1000;
+        border-top: 1px solid #eee;
+    }
+
+    .nav-menu.active {
+        display: block;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        padding: 15px 20px;
+        gap: 12px;
+    }
+
+    .nav-link {
+        display: block;
+        text-align: center;
+        padding: 8px 0;
+        font-size: 1rem;
+    }
+
+    /* Hero en celulares */
+    .hero {
+        padding: 55px 15px;
+    }
+
+    .hero h1 {
+        font-size: 1.7rem;
+    }
+
+    .hero .tagline {
+        font-size: 1.1rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    /* Grillas a una sola columna */
+    .about-grid, .mv-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    /* Políticas en teléfono */
+    .policies-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .policy-card {
+        padding: 16px;
+    }
+
+    .policy-header {
+        gap: 12px;
+        margin-bottom: 12px;
+    }
+
+    .policy-icon {
+        font-size: 2rem;
+    }
+
+    .policy-header h3 {
+        font-size: 0.92rem;
+    }
+
+    .policy-actions {
+        display: flex;
+        flex-direction: row; /* Botones ordenados lado a lado */
+        gap: 8px;
+    }
+
+    .btn-policy {
+        padding: 8px 6px;
+        font-size: 0.8rem;
+    }
+
+    /* Tarjetas de contacto en celular */
+    .contact-cards-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .contact-card {
+        width: 100%;
+        padding: 20px 15px;
+    }
+
+    .contact-card-icon {
+        font-size: 2.2rem;
+        margin-bottom: 8px;
+    }
+
+    .contact-card p {
+        margin-bottom: 12px;
+    }
+}
+
+@media (max-width: 380px) {
+    /* Pantallas extremadamente estrechas */
+    .policy-actions {
+        flex-direction: column;
+    }
+}
